@@ -85,9 +85,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
     }
 }"""
 
-os.environ.setdefault("PGDATABASE", "backend")
-os.environ.setdefault("PGUSER", "username")
-os.environ.setdefault("PGPASSWORD", "")
+os.environ.setdefault("PGDATABASE", "ride_hailing")
+os.environ.setdefault("PGUSER", "postgres")
+os.environ.setdefault("PGPASSWORD", "root")
 os.environ.setdefault("PGHOST", "localhost")
 os.environ.setdefault("PGPORT", "5432")
 
