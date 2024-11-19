@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
     }
 }"""
 
-os.environ.setdefault("PGDATABASE", "liftoff_dev")
+os.environ.setdefault("PGDATABASE", "backend")
 os.environ.setdefault("PGUSER", "username")
 os.environ.setdefault("PGPASSWORD", "")
 os.environ.setdefault("PGHOST", "localhost")
