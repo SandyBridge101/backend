@@ -87,10 +87,10 @@ os.environ.setdefault("PGPORT", "5432")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "ride_hailing",
+        'NAME': "railway",
         'USER': "postgres",
-        'PASSWORD': "root",
-        'HOST': "localhost",
+        'PASSWORD': "hJtsidrobauRNEEsNipPJAuuAPciyPRS",
+        'HOST': "postgres.railway.internal",
         'PORT': "5432",
     }
 }
