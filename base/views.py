@@ -12,7 +12,6 @@ from .serializers import *
 class UserModelCreateView(generics.CreateAPIView):
     queryset = UserModel.objects.all()
     serializer_class = UserModelSerializer
-    permission_classes = [permissions.IsAuthenticated]
     http_method_names = ['post']
 
 class UserModelListView(generics.ListAPIView):
