@@ -78,6 +78,24 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+os.environ.setdefault("PGDATABASE", "ride_hailing")
+os.environ.setdefault("PGUSER", "postgres")
+os.environ.setdefault("PGPASSWORD", "root")
+os.environ.setdefault("PGHOST", "localhost")
+os.environ.setdefault("PGPORT", "5432")
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ["PGDATABASE"],
+        'USER': os.environ["PGUSER"],
+        'PASSWORD': os.environ["PGPASSWORD"],
+        'HOST': os.environ["PGHOST"],
+        'PORT': os.environ["PGPORT"],
+    }
+}
+
+
 """DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -85,7 +103,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
     }
 }"""
 
-os.environ.setdefault("PGDATABASE", "railway")
+"""os.environ.setdefault("PGDATABASE", "railway")
 os.environ.setdefault("PGUSER", "postgres")
 os.environ.setdefault("PGPASSWORD", "hJtsidrobauRNEEsNipPJAuuAPciyPRS")
 os.environ.setdefault("PGHOST", "postgres.railway.internal")
@@ -101,7 +119,7 @@ DATABASES = {
         'PORT': os.environ["PGPORT"],
     }
 }
-
+"""
 """DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
