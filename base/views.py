@@ -81,6 +81,8 @@ def getUser(request,phone,parameter,value):
     if parameter=="password":
         profile.password=value
 
+    profile.save()
+
     data={
         'status':True,
     }
