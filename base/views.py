@@ -71,7 +71,7 @@ def getUser(request,phone,parameter,value):
     for user in users:
         print(user.firstname)
         if user.phonenumber==phone:
-            id=user.pk
+            print(user.firstname,'found for editing')
             profile=user
 
     if parameter=="firstname":
