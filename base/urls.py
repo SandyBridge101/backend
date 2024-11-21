@@ -22,5 +22,5 @@ urlpatterns = [
 
     path('gethistory/<str:user>/', views.rideHistory, name='ride-history'),
     path('login/<str:password>/', views.login, name='user-login'),
-    path('getuser/<str:phone>/', views.getUser, name='get-user'),
+    path('getuser/<str:phone>/<str:parameter>/<str:value>/', views.getUser, name='get-user'),
 ]

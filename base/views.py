@@ -63,26 +63,26 @@ def login(request,password):
     print(data)
     return JsonResponse(data)
 
-def getUser(request,phone):
+def getUser(request,phone,parameter,value):
     users=UserModel.objects.all()
-    id=-1
-    fname=''
-    lname=''
-    uname=''
-    pword=''
+    profile=None
+
 
     for user in users:
         print(user.firstname)
         if user.phonenumber==phone:
             id=user.pk
-            break
+            profile=user
+
+    if parameter=="firstname":
+        profile.firstname=value
+    if parameter=="lastname":
+        profile.lastname=value
+    if parameter=="password":
+        profile.password=value
 
     data={
-        'user_id':id,
-        'firstname':fname,
-        'lastname':lname,
-        'username':uname,
-        'password':pword
+        'status':True,
     }
     return JsonResponse(data)
 
