@@ -59,11 +59,8 @@ def login(request,password):
     for user in users:
         print(user.firstname,user.password,password)
         if user.password==password:
-                data={
-                 'is_auth':True
-                }
-    
-
+            data={'is_auth':True}
+    print(data)
     return JsonResponse(data)
 
 def getUser(request,phone):
