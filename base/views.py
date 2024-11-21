@@ -73,6 +73,7 @@ def getUser(request,phone,parameter,value):
         if user.phonenumber==phone:
             print(user.firstname,'found for editing')
             profile=user
+            break
 
     if parameter=="firstname":
         profile.firstname=value
