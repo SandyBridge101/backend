@@ -7,7 +7,7 @@ class UserModel(models.Model):
     lastname = models.CharField(max_length=200)
     username = models.CharField(max_length=200)
     phonenumber = models.CharField(max_length=200)
-    password=models.CharField(max_length=200)
+    password=models.CharField(max_length=200,null=True)
     is_rider = models.IntegerField(default=0)
     is_ready = models.IntegerField(default=0)
     ride=models.IntegerField(default=-1)
