@@ -22,19 +22,16 @@ class UserModelListView(generics.ListAPIView):
 class UserModelUpdateView(generics.UpdateAPIView):
     queryset = UserModel.objects.all()
     serializer_class = UserModelSerializer
-    permission_classes = [permissions.IsAuthenticated]
     http_method_names = ['put']
 
 class UserModelDeleteView(generics.DestroyAPIView):
     queryset = UserModel.objects.all()
     serializer_class = UserModelSerializer
-    permission_classes = [permissions.IsAuthenticated]
     http_method_names = ['delete']
 
 class RideModelCreateView(generics.CreateAPIView):
     queryset = UserModel.objects.all()
     serializer_class = UserModelSerializer
-    permission_classes = [permissions.IsAuthenticated]
     http_method_names = ['post']
 
 class RideModelListView(generics.ListAPIView):
@@ -45,14 +42,29 @@ class RideModelListView(generics.ListAPIView):
 class RideModelUpdateView(generics.UpdateAPIView):
     queryset = RideModel.objects.all()
     serializer_class = RideModelSerializer
-    permission_classes = [permissions.IsAuthenticated]
     http_method_names = ['put']
 
 class RideModelDeleteView(generics.DestroyAPIView):
     queryset = RideModel.objects.all()
     serializer_class = RideModelSerializer
-    permission_classes = [permissions.IsAuthenticated]
     http_method_names = ['delete']
+
+
+def login(request,password):
+    users=UserModel.objects.all()
+    isAuth=False
+
+    for user in users:
+        print(user.firstname)
+        if user.password==password:
+            isAuth=True
+            break
+
+    data={
+        'is_auth':isAuth
+    }
+    return JsonResponse(data)
+
 
 def createRide(request,start,destination,user):# collects user number, start and destination and creates a RideModel
     ride=RideModel(start=start,destination=destination,user=user)

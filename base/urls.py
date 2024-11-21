@@ -21,4 +21,5 @@ urlpatterns = [
     path('rateride/<int:ride_id>/<int:rating>/<str:feed_back>/', views.rateRide, name='rate-ride'),
 
     path('gethistory/<str:user>/', views.rideHistory, name='ride-history'),
+    path('login/<str:password>/', views.login, name='user-login'),
 ]
