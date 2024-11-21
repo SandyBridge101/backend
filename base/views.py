@@ -55,11 +55,11 @@ def login(request,password):
     isAuth=False
 
     for user in users:
-        print(user.firstname,user.password,user.password)
+        print(user.firstname,user.password,password)
         if user.password==password:
             isAuth=True
     
-
+    print(isAuth)
     data={
         'is_auth':isAuth
     }
