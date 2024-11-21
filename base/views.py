@@ -55,13 +55,36 @@ def login(request,password):
     isAuth=False
 
     for user in users:
-        print(user.firstname)
+        print(user.firstname,user.password,user.password)
         if user.password==password:
             isAuth=True
-            break
+    
 
     data={
         'is_auth':isAuth
+    }
+    return JsonResponse(data)
+
+def getUser(request,phone):
+    users=UserModel.objects.all()
+    id=-1
+    fname=''
+    lname=''
+    uname=''
+    pword=''
+
+    for user in users:
+        print(user.firstname)
+        if user.phonenumber==phone:
+            id=user.pk
+            break
+
+    data={
+        'user_id':id,
+        'firstname':fname,
+        'lastname':lname,
+        'username':uname,
+        'password':pword
     }
     return JsonResponse(data)
 
