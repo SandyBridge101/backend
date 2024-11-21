@@ -52,17 +52,18 @@ class RideModelDeleteView(generics.DestroyAPIView):
 
 def login(request,password):
     users=UserModel.objects.all()
-    isAuth=False
+    data={
+        'is_auth':False
+    }
 
     for user in users:
         print(user.firstname,user.password,password)
         if user.password==password:
-            isAuth=True
+                data={
+                 'is_auth':True
+                }
     
-    print(isAuth)
-    data={
-        'is_auth':isAuth
-    }
+
     return JsonResponse(data)
 
 def getUser(request,phone):
