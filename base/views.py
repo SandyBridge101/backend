@@ -57,7 +57,7 @@ def login(request,password):
     }
 
     for user in users:
-        print(user.firstname,user.password,password)
+        print(user.firstname,user.password,password,user.password==password)
         if user.password==password:
             data={'is_auth':True}
     print(data)
